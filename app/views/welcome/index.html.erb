@@ -1,0 +1,26 @@
+<h1>Tantuni</h1>
+<h3>Listing microposts</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.body %></td>
+        <td><%= micropost.user.name %></td>
+        <td><%= gravatar_tag micropost.user.email, size: 32 %></hr><%= micropost.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
