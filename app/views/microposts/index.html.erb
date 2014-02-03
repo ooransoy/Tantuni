@@ -1,0 +1,28 @@
+<h1>Listing microposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.body %></td>
+        <td><%= micropost.user.name %></td>
+        <td><%= gravatar_tag user.email, size: 32 %><hr><%= micropost.created_at %></td>
+        <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
